@@ -1,0 +1,76 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////
+// 
+//  Required header files
+// 
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+#include<iostream>
+using namespace std;
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+// 
+//  Function Name : Replace
+//  Description :   Replaces an old value to a new value in the array
+//  Input :         T * , int
+//  Output :        bool
+//  Author :        Nidhi Girish Kadival
+//  Date :          09/01/2026
+// 
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+template <class T>
+void Replace(T *arr, int iSize, T oldValue, T newValue)
+{
+    int iCnt = 0;
+
+    for(iCnt=0; iCnt<iSize; iCnt++)
+    {
+        if(arr[iCnt] == oldValue)
+        {
+            arr[iCnt] = newValue;
+        }
+    }
+} // End of Replace
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+// 
+//  Entry point function for the application
+// 
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+int main()
+{
+    int arr[] = {10,20,30,40,50};
+    float brr[] = {55.5f,44.2f,22.1f,10.2f};
+    int iCnt = 0;
+
+    Replace(arr,5,10,90);
+
+    cout<<"arr: ";
+    for(iCnt=0; iCnt<5; iCnt++)
+    {
+        cout<<arr[iCnt]<<" ";
+    }
+    cout<<"\n";
+
+    Replace(brr,4,22.1f,11.22f);
+
+    cout<<"brr: ";
+    for(iCnt=0; iCnt<4; iCnt++)
+    {
+        cout<<brr[iCnt]<<" ";
+    }
+    cout<<"\n";
+
+    return 0;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+// 
+//  Testcases successfully handled by the application
+//
+//  Output:
+//  arr: 90 20 30 40 50 
+//  brr: 55.5 44.2 11.22 10.2 
+//
+/////////////////////////////////////////////////////////////////////////////////////////////////

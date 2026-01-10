@@ -1,0 +1,82 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////
+// 
+//  Required header files
+// 
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+#include<iostream>
+using namespace std;
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+// 
+//  Function Name : Max
+//  Description :   Returns the maximum of three numbers
+//  Input :         T , T , T
+//  Output :        T
+//  Author :        Nidhi Girish Kadival
+//  Date :          08/01/2026
+// 
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+template <class T>
+T Max(T No1, T No2, T No3)
+{
+    if( No1 > No2 )
+    {
+        if(No1 > No3)
+        {
+            return No1;
+        }
+        else
+        {
+            return No3;
+        }
+    }
+    else
+    {
+        if(No2 > No3)
+        {
+            return No2;
+        }
+        else
+        {
+            return No3;
+        }
+    }
+
+} // End of Max
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+// 
+//  Entry point function for the application
+// 
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+int main()
+{
+    int iRet = 0;
+    float fRet = 0.0f;
+    double dRet = 0.0;
+
+    iRet = Max(100,44,20);
+    cout<<"Maximum integer is: "<<iRet<<"\n";
+
+    fRet = Max(33.3f,10.10f,12.2f);
+    cout<<"Maximum float is: "<<fRet<<"\n";
+
+    dRet = Max(2.8902,4.6789,4.9999);
+    cout<<"Maximum double is: "<<dRet<<"\n";
+
+    return 0;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+// 
+//  Testcases successfully handled by the application
+//
+//  Output:
+//  Maximum integer is: 100
+//  Maximum float is: 33.3
+//  Maximum double is: 4.9999
+//
+/////////////////////////////////////////////////////////////////////////////////////////////////

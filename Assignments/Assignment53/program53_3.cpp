@@ -1,0 +1,72 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////
+// 
+//  Required header files
+// 
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+#include<iostream>
+using namespace std;
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+// 
+//  Function Name : SecondMax
+//  Description :   Returns second maximum number of the array
+//  Input :         T * , int
+//  Output :        bool
+//  Author :        Nidhi Girish Kadival
+//  Date :          08/01/2026
+// 
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+template <class T>
+T SecondMax(T * arr, int iSize)
+{
+    int iCnt = 0;
+    T SecondMax = arr[0];
+    T Max = arr[0];
+
+    for(int i = 1; i < iSize; i++)
+    {
+        if(arr[i] > Max)
+        {
+            SecondMax = Max;
+            Max = arr[i];
+        }
+        else if(arr[i] > SecondMax && arr[i] != Max)
+        {
+            SecondMax = arr[i];
+        }
+    }
+
+    return SecondMax;
+    
+} // End of SecondMax
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+// 
+//  Entry point function for the application
+// 
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+int main()
+{
+    int arr[] = {10,20,30,40,50,60,70,80,90};
+    float brr[] = {55.5f,44.2f,22.1f,10.2f};
+    int iCnt = 0;
+
+    cout<<"Second maximum number in arr[] is: "<<SecondMax(arr,9)<<"\n";
+
+    cout<<"Second maximum number in brr[] is: "<<SecondMax(brr,4)<<"\n";
+
+    return 0;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+// 
+//  Testcases successfully handled by the application
+//
+//  Output:
+//  Second maximum number in arr[] is: 80
+//  Second maximum number in brr[] is: 55.5
+//
+/////////////////////////////////////////////////////////////////////////////////////////////////
